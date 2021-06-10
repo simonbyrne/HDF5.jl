@@ -168,7 +168,8 @@ const H5F_ACC_SWMR_READ  = 0x0040
 const H5F_LIBVER_EARLIEST = 0
 const H5F_LIBVER_V18      = 1
 const H5F_LIBVER_V110     = 2
-const H5F_LIBVER_LATEST   = H5F_LIBVER_V110
+const H5F_LIBVER_V112     = 3
+const H5F_LIBVER_LATEST   = H5F_LIBVER_V112
 
 # object types
 const H5F_OBJ_FILE     = 0x0001
@@ -196,7 +197,7 @@ const H5FD_MPIO_CHUNK_MULTI_IO = 2
 const H5FD_MPIO_COLLECTIVE_IO  = 0
 const H5FD_MPIO_INDIVIDUAL_IO  = 1
 
-# object types (C enum H5Itype_t)
+# object types (C enum H5Itype_t')
 const H5I_FILE         = 1
 const H5I_GROUP        = 2
 const H5I_DATATYPE     = 3
@@ -231,6 +232,7 @@ const H5P_DATATYPE_CREATE  = _read_const(:H5P_CLS_DATATYPE_CREATE_ID_g)
 const H5P_DATATYPE_ACCESS  = _read_const(:H5P_CLS_DATATYPE_ACCESS_ID_g)
 const H5P_STRING_CREATE    = _read_const(:H5P_CLS_STRING_CREATE_ID_g)
 const H5P_ATTRIBUTE_CREATE = _read_const(:H5P_CLS_ATTRIBUTE_CREATE_ID_g)
+const H5P_ATTRIBUTE_ACCESS = _read_const(:H5P_CLS_ATTRIBUTE_ACCESS_ID_g)
 const H5P_OBJECT_COPY      = _read_const(:H5P_CLS_OBJECT_COPY_ID_g)
 const H5P_LINK_CREATE      = _read_const(:H5P_CLS_LINK_CREATE_ID_g)
 const H5P_LINK_ACCESS      = _read_const(:H5P_CLS_LINK_ACCESS_ID_g)
@@ -335,7 +337,31 @@ const H5T_NATIVE_DOUBLE   = _read_const(:H5T_NATIVE_DOUBLE_g)
 # Other type constants
 const H5T_VARIABLE = reinterpret(UInt, -1)
 
+# FD consts: these are defined in hdf5 as macros
+const H5FD_CORE   = ccall((:H5FD_core_init, libhdf5), hid_t, ())
+const H5FD_FAMILY = ccall((:H5FD_family_init, libhdf5), hid_t, ())
+const H5FD_LOG    = ccall((:H5FD_log_init, libhdf5), hid_t, ())
+# const H5FD_MPIO   = ccall((:H5FD_mpio_init, libhdf5), hid_t, ())
+const H5FD_MULTI  = ccall((:H5FD_multi_init, libhdf5), hid_t, ())
+const H5FD_SEC2   = ccall((:H5FD_sec2_init, libhdf5), hid_t, ())
+const H5FD_STDIO  = ccall((:H5FD_stdio_init, libhdf5), hid_t, ())
+
 # Filter constants
+const H5Z_FLAG_MANDATORY = 0x0000
 const H5Z_FLAG_OPTIONAL = 0x0001
 const H5Z_FLAG_REVERSE = 0x0100
 const H5Z_CLASS_T_VERS = 1
+
+# predefined filters
+const H5Z_FILTER_ALL = H5Z_filter_t(0)
+const H5Z_FILTER_NONE = H5Z_filter_t(0)
+const H5Z_FILTER_DEFLATE = H5Z_filter_t(1)
+const H5Z_FILTER_SHUFFLE = H5Z_filter_t(2)
+const H5Z_FILTER_FLETCHER32 = H5Z_filter_t(3)
+const H5Z_FILTER_SZIP = H5Z_filter_t(4)
+const H5Z_FILTER_NBIT = H5Z_filter_t(5)
+const H5Z_FILTER_SCALEOFFSET = H5Z_filter_t(6)
+
+const H5_SZIP_EC_OPTION_MASK = Cuint(4)
+const H5_SZIP_NN_OPTION_MASK = Cuint(32)
+const H5_SZIP_MAX_PIXELS_PER_BLOCK = Cuint(32)

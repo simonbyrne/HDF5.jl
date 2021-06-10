@@ -259,13 +259,16 @@ h5o_open_by_idx
 - [`h5p_get_fapl_mpio32`](@ref HDF5.h5p_get_fapl_mpio32)
 - [`h5p_get_fapl_mpio64`](@ref HDF5.h5p_get_fapl_mpio64)
 - [`h5p_get_fclose_degree`](@ref HDF5.h5p_get_fclose_degree)
+- [`h5p_get_filter`](@ref HDF5.h5p_get_filter)
 - [`h5p_get_filter_by_id`](@ref HDF5.h5p_get_filter_by_id)
 - [`h5p_get_layout`](@ref HDF5.h5p_get_layout)
 - [`h5p_get_libver_bounds`](@ref HDF5.h5p_get_libver_bounds)
 - [`h5p_get_local_heap_size_hint`](@ref HDF5.h5p_get_local_heap_size_hint)
+- [`h5p_get_nfilters`](@ref HDF5.h5p_get_nfilters)
 - [`h5p_get_obj_track_times`](@ref HDF5.h5p_get_obj_track_times)
 - [`h5p_get_userblock`](@ref HDF5.h5p_get_userblock)
 - [`h5p_modify_filter`](@ref HDF5.h5p_modify_filter)
+- [`h5p_remove_filter`](@ref HDF5.h5p_remove_filter)
 - [`h5p_set_alignment`](@ref HDF5.h5p_set_alignment)
 - [`h5p_set_alloc_time`](@ref HDF5.h5p_set_alloc_time)
 - [`h5p_set_char_encoding`](@ref HDF5.h5p_set_char_encoding)
@@ -277,13 +280,18 @@ h5o_open_by_idx
 - [`h5p_set_external`](@ref HDF5.h5p_set_external)
 - [`h5p_set_fapl_mpio32`](@ref HDF5.h5p_set_fapl_mpio32)
 - [`h5p_set_fapl_mpio64`](@ref HDF5.h5p_set_fapl_mpio64)
+- [`h5p_set_fapl_sec2`](@ref HDF5.h5p_set_fapl_sec2)
 - [`h5p_set_fclose_degree`](@ref HDF5.h5p_set_fclose_degree)
 - [`h5p_set_filter`](@ref HDF5.h5p_set_filter)
+- [`h5p_set_fletcher32`](@ref HDF5.h5p_set_fletcher32)
 - [`h5p_set_layout`](@ref HDF5.h5p_set_layout)
 - [`h5p_set_libver_bounds`](@ref HDF5.h5p_set_libver_bounds)
 - [`h5p_set_local_heap_size_hint`](@ref HDF5.h5p_set_local_heap_size_hint)
+- [`h5p_set_nbit`](@ref HDF5.h5p_set_nbit)
 - [`h5p_set_obj_track_times`](@ref HDF5.h5p_set_obj_track_times)
+- [`h5p_set_scaleoffset`](@ref HDF5.h5p_set_scaleoffset)
 - [`h5p_set_shuffle`](@ref HDF5.h5p_set_shuffle)
+- [`h5p_set_szip`](@ref HDF5.h5p_set_szip)
 - [`h5p_set_userblock`](@ref HDF5.h5p_set_userblock)
 - [`h5p_set_virtual`](@ref HDF5.h5p_set_virtual)
 ```@docs
@@ -301,13 +309,16 @@ h5p_get_dxpl_mpio
 h5p_get_fapl_mpio32
 h5p_get_fapl_mpio64
 h5p_get_fclose_degree
+h5p_get_filter
 h5p_get_filter_by_id
 h5p_get_layout
 h5p_get_libver_bounds
 h5p_get_local_heap_size_hint
+h5p_get_nfilters
 h5p_get_obj_track_times
 h5p_get_userblock
 h5p_modify_filter
+h5p_remove_filter
 h5p_set_alignment
 h5p_set_alloc_time
 h5p_set_char_encoding
@@ -319,13 +330,18 @@ h5p_set_dxpl_mpio
 h5p_set_external
 h5p_set_fapl_mpio32
 h5p_set_fapl_mpio64
+h5p_set_fapl_sec2
 h5p_set_fclose_degree
 h5p_set_filter
+h5p_set_fletcher32
 h5p_set_layout
 h5p_set_libver_bounds
 h5p_set_local_heap_size_hint
+h5p_set_nbit
 h5p_set_obj_track_times
+h5p_set_scaleoffset
 h5p_set_shuffle
+h5p_set_szip
 h5p_set_userblock
 h5p_set_virtual
 ```
